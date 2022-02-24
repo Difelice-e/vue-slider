@@ -65,7 +65,11 @@ let app = new Vue(
             },
             intervalChangeSlide: function() {
                 this.intervallo = setInterval(this.nextSlide, 3000)
+            },
+            stopInterval: function() {
+                clearInterval(this.intervallo);
             }
+
         },
               
     });
