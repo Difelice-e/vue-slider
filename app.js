@@ -50,11 +50,11 @@ let app = new Vue(
                 if (this.currentIndex !== 0) {
                     this.currentIndex --
                 } else {
-                    this.currentIndex = 4
+                    this.currentIndex = this.slideItem.length - 1
                 }
             },
             nextSlide: function() {
-                if (this.currentIndex !== 4) {
+                if (this.currentIndex !== this.slideItem.length - 1) {
                     this.currentIndex ++
                 } else {
                     this.currentIndex = 0
