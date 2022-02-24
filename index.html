@@ -24,8 +24,8 @@
 
             <div class="control-wrapper">
                 <img v-for="(item, index) in slideItem" :src="item.image" alt="" v-bind:class="index == currentIndex ? 'active' : ' ' ">
-                <span v-html="arrows.prev" class="prev"></span>
-                <span v-html="arrows.next" class="next"></span>
+                <span @click="prevSlide()" v-html="arrows.prev" class="prev"></span>
+                <span @click="nextSlide()" v-html="arrows.next" class="next"></span>
             </div>
         </div>
     </main>

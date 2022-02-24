@@ -2,7 +2,7 @@ let app = new Vue(
     {
         el: '#root',
         data: {
-            currentIndex: 0, 
+            currentIndex: 2, 
             slideItem: [
                 {
                     image: 'img/01.jpg',
@@ -44,6 +44,22 @@ let app = new Vue(
                 next: '<i class="fa-solid fa-chevron-down"></i>'
             }
             
-        }            
+        },
+        methods: {
+            prevSlide: function() {
+                if (this.currentIndex !== 0) {
+                    this.currentIndex --
+                } else {
+                    this.currentIndex = 4
+                }
+            },
+            nextSlide: function() {
+                if (this.currentIndex !== 4) {
+                    this.currentIndex ++
+                } else {
+                    this.currentIndex = 0
+                }
+            }
+        }           
     }
 );
