@@ -13,7 +13,7 @@
     <main id="root">
         <div class="slider">
             <div class="slider-wrapper">
-                <div v-for="(item, index) in slideItem"  class="item" v-bind:class="index == currentIndex ? 'active' : ' ' ">
+                <div v-for="(item, index) in slideItem" class="item" v-bind:class="index == currentIndex ? 'active' : ' ' ">
                     <img :src="item.image" alt="">
                     <div class="item-info">
                         <h1>{{ item.title }}</h1>
@@ -23,7 +23,7 @@
             </div>
 
             <div class="control-wrapper">
-                <img v-for="(item, index) in slideItem" :src="item.image" alt="" v-bind:class="index == currentIndex ? 'active' : ' ' ">
+                <img v-for="(item, index) in slideItem" :src="item.image" alt="" @click="currentIndex = index" v-bind:class="index == currentIndex ? 'active' : ' ' ">
                 <span @click="prevSlide()" v-html="arrows.prev" class="prev"></span>
                 <span @click="nextSlide()" v-html="arrows.next" class="next"></span>
             </div>
