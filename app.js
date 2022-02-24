@@ -2,7 +2,7 @@ let app = new Vue(
     {
         el: '#root',
         data: {
-            currentIndex: 2, 
+            currentIndex: 0, 
             slideItem: [
                 {
                     image: 'img/01.jpg',
@@ -45,6 +45,9 @@ let app = new Vue(
             }
             
         },
+        mounted: function() {
+            this.intervalChangeSlide()
+        }, 
         methods: {
             prevSlide: function() {
                 if (this.currentIndex !== 0) {
@@ -59,7 +62,10 @@ let app = new Vue(
                 } else {
                     this.currentIndex = 0
                 }
+            },
+            intervalChangeSlide: function() {
+                this.intervallo = setInterval(this.nextSlide, 3000)
             }
-        }           
-    }
-);
+        },
+              
+    });
